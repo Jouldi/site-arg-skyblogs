@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>xXX_EmO_GiRl_XXx - Skyblog</title>
+  <style>
+    /* Reset et Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      /* Fond noir avec image répétée ou texture grunge */
+      background: #000 url("IMG_2154.JPG") repeat; 
+      color: #eee;
+    }
+
+    /* Liens globaux */
+    a { color: #d0d; text-decoration: none; }
+    a:hover { color: #fff; text-decoration: underline; }
+
+    /* Conteneur Principal */
+    #page {
+      width: 950px;
+      margin: 20px auto;
+      background: #111;
+      border: 2px solid #444;
+      box-shadow: 0 0 15px #000;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(180deg, #400040, #000);
+      padding: 20px;
+      border-bottom: 2px dashed #ff00ff;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 3px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #ff00ff, 2px 2px 0 #000;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* Navigation */
+    nav {
+      background: #222;
+      border-bottom: 1px solid #444;
+      padding: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    nav a { margin: 0 15px; font-weight: bold; color: #aaa; }
+    nav a:hover { color: #ff00ff; }
+
+    /* Structure 3 Colonnes */
+    #content {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      gap: 15px;
+    }
+
+    #left-col, #right-col { width: 20%; font-size: 11px; }
+    #posts { width: 56%; }
+
+    /* Style des Articles */
+    .post {
+      background: #181818;
+      border: 1px solid #333;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    .post-header {
+      border-bottom: 1px dashed #555;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .post-title {
+      font-size: 18px;
+      color: #ff00ff;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .post-meta { font-size: 10px; color: #888; }
+
+    .post-body {
+      margin-top: 10px;
+      line-height: 1.5;
+      font-size: 13px;
+      text-align: center; /* Centré comme souvent sur les blogs */
+    }
+
+    .post-body img {
+      max-width: 100%;
+      border: 4px solid #000;
+      margin: 10px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .post-tags {
+      font-size: 10px;
+      color: #666;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .comments-link {
+      font-size: 11px;
+      margin-top: 5px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    /* Commentaires */
+    .comments {
+      margin-top: 15px;
+      background: #111;
+      border: 1px solid #222;
+      padding: 10px;
+    }
+
+    .comment {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px dotted #333;
+      text-align: left;
+    }
+
+    .comment-author { color: #5a0c52; font-weight: bold; font-size: 12px; }
+    
+    .comment-meta { font-size: 9px; color: #555; float: right; }
+    
+    .comment-text {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #ddd;
+    }
+
+    /* Widgets Latéraux */
+    .box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      margin-bottom: 15px;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    .box h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #ff00ff;
+      padding-bottom: 3px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .profile-pic { width: 100%; border: 1px solid #444; margin-bottom: 5px; opacity: 0.8; }
+    .profile-pic:hover { opacity: 1; }
+
+    .box ul { list-style: square; margin-left: 20px; color: #888; }
+    .box li { margin-bottom: 3px; }
+
+    footer {
+      background: #111;
+      border-top: 1px solid #333;
+      font-size: 10px;
+      text-align: center;
+      color: #555;
+      padding: 10px;
+      clear: both;
+    }
+    
+    /* Glitch Effect pour le titre */
+    h1:hover { color: #d0d; text-shadow: 2px 0 #fff, -2px 0 #ff0000; cursor: help;}
+  </style>
+</head>
+<body>
+  <div id="page">
+    <header>
+      <h1>xXX_EmO_GiRl_XXx</h1>
+      <p>♫ life sucks then you die ♫</p>
+    </header>
+
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Profil</a>
+      <a href="#">Mes amis (42)</a>
+    </nav>
+
+    <div id="content">
+      
+      <aside id="left-col">
+        <div class="box">
+          <h3>Profil</h3>
+          <img src="IMG_2159.JPG" alt="photo emo masquée" class="profile-pic">
+          <p><strong>Prénom :</strong> xXX_EmO_GiRl_XXx</p>
+          <p><strong>Âge :</strong> 14 ans</p>
+          <p><strong>Humeur :</strong> brisée inside</p>
+          <p><strong>Ville :</strong> 77 rpz</p>
+          <br>
+          <p style="font-size:10px;">
+             <strong>Bio :</strong> <br>
+             ★𝓉ℴ𝓀𝒾ℴ 𝒽ℴ𝓉ℯ𝓁★<br>
+             J★𝓉ℴ𝓀𝒾ℴ 𝒽ℴ𝓉ℯ𝓁★⋆⭒˚｡⋆★𝓉ℴ𝓀𝒾ℴ 𝒽ℴ𝓉ℯ𝓁★☆ ★ ✮ ★ ☆ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ𝐓𝐨𝐦 𝐤𝐚𝐮𝐥𝐢𝐭𝐳✭⋆⭒˚｡⋆︎⛥ 丰✭⋆♱✮♱⋆‧₊˚✩ ₊˚🎧⊹♡✮ ✮ ✮Bem!𝓽ꪮ𝘬𝓲ꪮ ꫝꪮ𝓽ꫀꪶ♡★✬✪✫✯✭✰<br>
+             No rage plz. <br>
+             Si tu m'aimes pas tu clic sur la croix rouge [X] en haut a droite !!!
+          </p>
+        </div>
+        
+        <div class="box">
+          <h3>Statistiques</h3>
+          <p>Visiteurs : 1337</p>
+          <p>Com's : 301</p>
+          <p>Amis : 42</p>
+        </div>
+      </aside>
+
+      <section id="posts">
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">Fin du délire...</div>
+            <div class="post-meta">Posté le 23/11/2007 à 22:41 | 14 com's</div>
+          </div>
+          <div class="post-body">
+            <p>J'crois que j'en ai marre de faire semblant...</p>
+            <p>Tout le monde croit me connaître mais personne voit qui je suis vraiment.  
+            Peut-être qu'un jour j'effacerai tout ça, comme si ça n'avait jamais existé.</p>
+            <p style="margin-top: 10px; font-weight:bold; color: #f00;">
+              ARRETEZ DE ME PARLER DE CE POSTE SUR MP JE ME SUIS FAIT PIRATER PAR MA SOEUR OK ????
+            </p>
+            <p style="margin-top: 6px; font-style: italic; color: #aaa;">
+              (si tu lis ça... pose-toi les bonnes questions)
+            </p>
+          </div>
+          <div class="post-tags">#emo #fake #twinz #hack</div>
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-author"><a href="Miss_Kawaii.html">Miss_Kawaii</a></div>
+              <div class="comment-meta">23/11/2007 à 22:49</div>
+              <div class="comment-text">
+                pk tu dis ça ??? :'( t pas obligée d tt effacer... assume un peu lol
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">M POKORA <3 <3</div>
+            <div class="post-meta">Posté le 23/11/2007 à 18:30 | 4 com's</div>
+          </div>
+          <div class="post-body">
+            <img src="images.jpg" alt="blingee matt pokora scintillant" style="border-color:#ff00ff;">
+            <p style="text-align:center; font-weight:bold; color:#ff00ff; font-family:'Comic Sans MS';">
+              il é tro bo putin jmeur...<br>
+              Regardez ses abdos !!! <br>
+              "Elle me controle, et elle rythme mes pas..." ♫♪
+            </p>
+          </div>
+          <div class="post-tags">#mattpokora #love #blingee #star</div>
+          
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-author">Guest-13</div>
+              <div class="comment-meta">Aujourd'hui à 18:35</div>
+              <div class="comment-text">wsh tfk poseuse ??? tu kiff mpokora mtn ? mdr la honte</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">xXX_EmO_GiRl_XXx</div>
+              <div class="comment-meta">Aujourd'hui à 18:42</div>
+              <div class="comment-text">Tro relou ses ma soeur g juré elle é sur lordi !! C PAS MOI !!! J'EFFACE PAS POUR MONTRER A MES PARENTS CE QUELLE A FAIT</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">Dark-Prince-666</div>
+              <div class="comment-meta">Aujourd'hui à 19:01</div>
+              <div class="comment-text">
+                c chelou @_@<br>
+                tu me brize le coeur &lt;/3
+              </div>
+            </div>
+            <div class="comment">
+              <div class="comment-author" style="color:#aaa;">jm58</div>
+              <div class="comment-meta">Aujourd'hui à 19:15</div>
+              <div class="comment-text">
+                Les masques tombent… Hin hin hin…<br>
+                A MEDITER 58…….. BISES les jeunes
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">Ma soeur la boloss...</div>
+            <div class="post-meta">Posté le 22/11/2007 à 17:15 | 4 com's</div>
+          </div>
+          <div class="post-body">
+            <p>Tro jalouze elle le mérite pas.</p>
+            <p>Elle a gagné un concours ds son magazine de pourri gâtée pr rencontrer des stars... pff.</p>
+            <p>that should be me...</p>
+            <img src="fan2tokio.jpg" alt="couv fan2">
+            <p style="font-size:10px;">(je parle pr rencontrer Bill Kaulitz hein, pas les nases de sa photo...)</p>
+          </div>
+          <div class="post-tags">#jalousie #justine #fan2 #pff</div>
+          
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-author">Arcade-K1d-77</div>
+              <div class="comment-meta">Hier à 17:20</div>
+              <div class="comment-text">c ki ? pk on sé jms vu au college si t jumelle ?</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">Mélody</div>
+              <div class="comment-meta">Hier à 17:25</div>
+              <div class="comment-text">c ma jumelle elle habite à NY avec ma tante elle va a Constance Billard (l'école de gossip girl tkt)</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">Guest-13</div>
+              <div class="comment-meta">Hier à 17:30</div>
+              <div class="comment-text">Mytho va</div>
+            </div>
+             <div class="comment">
+              <div class="comment-author">Luv-Shadow</div>
+              <div class="comment-meta">Hier à 17:45</div>
+              <div class="comment-text">c pa l’ekole dans gossip girl sa meme ? mdr grillé</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">Eye of the Tiger x^)</div>
+            <div class="post-meta">Posté le 20/11/2007 à 18:12 | 6 com's</div>
+          </div>
+          <div class="post-body">
+            <p>Matez mon nvo maquillaje x^)</p>
+            <p>g reprodui celui de bill mon idol du moman jadore kan il cri x^)</p>
+            <p>jadore sa musik g limpression kil ya ke lui ki me compran</p>
+            <p>breeeeeeeeef x^)</p>
+            <p>vs en pensez koi ??? lachez vo comms fuck les haineu</p>
+            <img src="IMG_2159.JPG" alt="maquillage yeux bill">
+          </div>
+          <div class="post-tags">#makeup #emo #bill #tokiohotel</div>
+          
+          <div class="comments">
+             <div class="comment">
+              <div class="comment-author">Dark-Prince-666</div>
+              <div class="comment-meta">20/11/2007 à 18:15</div>
+              <div class="comment-text">ma princesse des ténèbres &lt;3 &lt;3 &lt;3</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">Arcade-K1d-77</div>
+              <div class="comment-meta">20/11/2007 à 18:20</div>
+              <div class="comment-text">tfk samedi ??? on va a l'arkade ?</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">xXX_EmO_GiRl_XXx</div>
+              <div class="comment-meta">20/11/2007 à 18:25</div>
+              <div class="comment-text">nan je v chez Stpeh' t pa invitée ^^'</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author"><a href="Miss_Kawaii.html">Miss_Kawaii</a></div>
+              <div class="comment-meta">20/11/2007 à 19:05</div>
+              <div class="comment-text">
+                envie de vomir !!! tu fé tro pitié g juré avc ton makillaje de mayrde<br>
+                Kan jte voi sa me rassure x^)
+              </div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">xXX_EmO_GiRl_XXx</div>
+              <div class="comment-meta">20/11/2007 à 19:10</div>
+              <div class="comment-text">on komprend ri1 a ce ke tu di crève jalouse</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">Dark-Prince-666</div>
+              <div class="comment-meta">20/11/2007 à 19:15</div>
+              <div class="comment-text">miss_kawaii elle parle tro mal elle ai telleman une pauvre fille elle a pas sé propre emojis xD</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">[poème] masque de verre</div>
+            <div class="post-meta">Posté le 18/11/2007 à 01:13 | 3 com's</div>
+          </div>
+          <div class="post-body">
+            <p>
+              je souris en rose sur un autre écran,<br>
+              fan de paillettes, de boys et de refrains.<br>
+              mais ici je saigne en noir et blanc,<br>
+              entre deux chansons ke je connais par coeur...<br>
+              <br>
+              "Pas sans toi..." (c une métaphore pr dire sans Bill...)
+            </p>
+          </div>
+          <div class="post-tags">#poème #doublevie #x^) #spleen</div>
+          
+          <div class="comments">
+             <div class="comment">
+              <div class="comment-author">Arcade-K1d-77</div>
+              <div class="comment-meta">18/11/2007 à 10:05</div>
+              <div class="comment-text">cc melody eh g jMvu ta soeur elle eT kel Classe ?</div>
+            </div>
+            <div class="comment">
+              <div class="comment-author"><a href="Miss_Kawaii.html">Miss_Kawaii</a></div>
+              <div class="comment-meta">18/11/2007 à 14:12</div>
+              <div class="comment-text">j’m tro ce poeme sis' &lt;3 on dirai une chanson kon écouté hier lol</div>
+            </div>
+             <div class="comment">
+              <div class="comment-author">xXX_EmO_GiRl_XXx</div>
+              <div class="comment-meta">18/11/2007 à 14:15</div>
+              <div class="comment-text">TG tu me soule sort de ma chambre !!!</div>
+            </div>
+          </div>
+        </article>
+        
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">.: T0ki0 H0teL :.</div>
+            <div class="post-meta">Posté le 15/11/2007 à 14:02 | 8 com's</div>
+          </div>
+          <div class="post-body">
+            <img src="bill.jpeg" alt="Bill Kaulitz">
+            <p>
+              IL E TROP BO !!!! <br>
+              C l'homme 2 ma vie sérieux.<br>
+              Kan il chante "Durch den Monsun" je pleure direct... :'(
+            </p>
+            <p>
+               Meme si des fois g envie de danser sur des trucs plus... rythmé genre RNB (nan je dec mdr c pr voir si vs suivé).<br>
+               VIVE LE ROCK !!! 
+            </p>
+            <p style="font-weight:bold; font-size:14px;">Laché vo coms ! Je rend tout !</p>
+          </div>
+          <div class="post-tags">#TH #Bill #Monsoon #Rock</div>
+          
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-author">sebdu19</div>
+              <div class="comment-meta">15/11/2007 à 14:30</div>
+              <div class="comment-text">+5 !!! passe sur mon blog g mi des new gifs de sasuke</div>
+            </div>
+             <div class="comment">
+              <div class="comment-author"><a href="Miss_Kawaii.html">Miss_Kawaii</a></div>
+              <div class="comment-meta">15/11/2007 à 16:00</div>
+              <div class="comment-text">Mdrr avoue tu kiff kan je met "Elle me controle" a fond !!</div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <aside id="right-col">
+        
+        <div class="box">
+          <h3>J'aime / J'aime pas</h3>
+          <p><strong><span style="color:#0f0;">+++ :</span></strong></p>
+          <ul style="margin-bottom:5px;">
+             <li>Tokio Hotel (Bill &lt;3)</li>
+             <li>MCR</li>
+             <li>Le noir</li>
+             <li>La solitude</li>
+          </ul>
+          <p><strong><span style="color:#f00;">--- :</span></strong></p>
+          <ul>
+            <li>les faux amis</li>
+            <li>les poseurs (dégagé !!)</li>
+            <li>l'école</li>
+            <li>le RNB et le Rap (beurk)</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Mes Skyblog préf'</h3>
+          <ul>
+            <li><a href="Miss_Kawaii.html">xX_Miss_Kawaii_Xx</a> (blog de ma soeur jumelle... allez pa voir c une looseuze)</li>
+            <li><a href="#">Tokio-H0tel-4ever</a></li>
+            <li><a href="#">Broken-Heart-x3</a></li>
+            <li><a href="#">Dark-Prince-666</a></li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Music</h3>
+          <p style="text-align:center; font-size:9px; color:#888;">
+            (Lecteur MP3 en panne)<br>
+            Actuellement : <strong>Tokio Hotel - Schrei</strong><br>
+            [ || ] [ ▶ ] [ ■ ]<br>
+            -----------------
+          </p>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      Skyblog de xXX_EmO_GiRl_XXx | design by me | no copy © 2007
+    </footer>
+  </div>
+</body>
+</html>
