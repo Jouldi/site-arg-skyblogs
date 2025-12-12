@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>xX_Miss_Kawaii_Xx - Skyblog</title>
+  <style>
+    /* RESET & BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Comic Sans MS", "Verdana", "Trebuchet MS", Arial, sans-serif;
+      background-color: #ffe1f5;
+      /* Texture pailletée */
+      background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); 
+      background-attachment: fixed;
+      color: #bf16a9;
+    }
+
+    #page {
+      width: 950px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.95);
+      border: 3px dashed #da3899;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+      border-radius: 15px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb3ec, #ff8ad4, #ffd6ff);
+      padding: 18px;
+      border-bottom: 2px solid #fff;
+      text-align: center;
+      position: relative;
+      border-radius: 12px 12px 0 0;
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #ff0099;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 12px;
+      color: #fff;
+      margin-top: 5px;
+      font-weight: bold;
+      font-style: italic;
+      text-shadow: 1px 1px 1px #d0d;
+    }
+
+    header::after {
+      content: "★";
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 26px;
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    nav {
+      background: #fff0f9;
+      border-bottom: 2px dashed #ffc0e5;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 5px 15px;
+      margin: 0 5px;
+      border-radius: 15px;
+      background: #ffbde6;
+      border: 2px solid #fff;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a:hover {
+      background: #ff6bab;
+      transform: scale(1.1);
+    }
+
+    /* STRUCTURE 3 COLONNES */
+    #content {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      gap: 10px;
+    }
+
+    /* Colonnes */
+    #left-col, #right-col { width: 22%; font-size: 11px; }
+    #posts { width: 54%; }
+
+    /* Style des articles */
+    .post {
+      background: #fff;
+      border: 1px solid #ffcce6;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 #ffe6f2;
+    }
+
+    .post-header {
+      border-bottom: 2px dashed #ff99cc;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .post-title {
+      font-size: 18px;
+      color: #ff0099;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .post-meta {
+      font-size: 10px;
+      color: #aaa;
+    }
+
+    .post-body {
+      margin-top: 10px;
+      line-height: 1.5;
+      text-align: center;
+      color: #d15eb9;
+    }
+
+    .post-body img {
+      max-width: 100%;
+      border: 4px solid #ffebf7;
+      border-radius: 10px;
+      margin: 10px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .post-tags {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 10px;
+      font-style: italic;
+      text-align: left;
+    }
+
+    .comments-link {
+      font-size: 11px;
+      margin-top: 5px;
+      text-align: right;
+      color: #ff3f9b;
+      font-weight: bold;
+    }
+
+    /* Commentaires */
+    .comments {
+      margin-top: 15px;
+      background: #fff0f9;
+      border: 1px solid #ffc0e5;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .comment {
+      margin-bottom: 10px;
+      border-bottom: 1px dotted #ff99cc;
+      padding-bottom: 5px;
+      text-align: left;
+    }
+
+    .comment-author {
+      color: #aa0066;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    
+    .comment-meta {
+      font-size: 9px;
+      color: #aaa;
+      float: right;
+    }
+
+    .comment-text {
+      font-size: 11px;
+      margin-top: 3px;
+      color: #555;
+    }
+
+    /* Widgets Latéraux */
+    .box {
+      background: #fff;
+      border: 2px solid #ffbde6;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .box h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      border-bottom: 2px dotted #ff6bab;
+      padding-bottom: 2px;
+      color: #ff6bab;
+    }
+
+    .profile-pic {
+      width: 100%;
+      border: 4px solid #ffbde6;
+      border-radius: 10px;
+      margin-bottom: 5px;
+    }
+
+    .box ul {
+      list-style: none;
+      margin-left: 0;
+      margin-top: 5px;
+      text-align: left;
+      padding-left: 5px;
+    }
+
+    .box ul li { margin-bottom: 5px; }
+    .box ul li::before { content: "♥ "; color: #ff0099; }
+
+    .box a { color: #ff0099; text-decoration: none; }
+    .box a:hover { text-decoration: underline; color: #aa0066; }
+
+    footer {
+      background: #ffe1f5;
+      border-top: 2px solid #fff;
+      font-size: 10px;
+      text-align: center;
+      color: #d46cb3;
+      padding: 15px;
+      border-radius: 0 0 12px 12px;
+      clear: both;
+    }
+    
+    /* ASCII ART STYLE */
+    .ascii-art {
+        font-family: monospace;
+        white-space: pre;
+        font-size: 8px;
+        line-height: 8px;
+        color: #ff00ff;
+        text-align: center;
+        margin: 15px 0;
+        background: #fff;
+        padding: 10px;
+        border: 1px dashed #ffc0e5;
+    }
+  </style>
+</head>
+<body>
+  <div id="page">
+    <header>
+      <h1>xX_Miss_Kawaii_Xx</h1>
+      <p>★ "Son parfum flotte dans l’air autour de moi" ... M.Pokora &lt;3★</p>
+    </header>
+
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Profil</a>
+      <a href="fanfic.html">Ma Fic (NEW)</a>
+      <a href="#">Mes best ♥</a>
+    </nav>
+
+    <div id="content">
+      
+      <aside id="left-col">
+        <div class="box">
+          <h3>Profil</h3>
+            <img src="pp.jpg" alt="photo kawaii" class="profile-pic">
+          <p><strong>Prénom :</strong> Selene (Miss Kawaii ♥)</p>
+          <p><strong>Âge :</strong> 14 ans</p>
+          <p><strong>Humeur :</strong> inspirée x^)</p>
+          <p><strong>Ville :</strong> 77 rpz</p>
+        </div>
+        
+        <div class="box">
+          <h3>Statistiques</h3>
+          <p>Visiteurs : 2048</p>
+          <p>Com's : 389</p>
+          <p>Amis : 115</p>
+        </div>
+      </aside>
+
+      <section id="posts">
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">~* Ma Fiction : Love in Berlin *~</div>
+            <div class="post-meta">Posté le 25/11/2007 à 18:30 | 42 com's</div>
+          </div>
+          <div class="post-body">
+            <p><strong>Kikou les girls !!!</strong></p>
+            <p>
+              Voila g décidé de me lancer... g ecrit une fic !!! <br>
+              C l'histouare de <strong>twa (T/P)</strong> et de <strong>Bill Kaulitz</strong> &lt;3
+            </p>
+            <p>
+              Je c ke je suis fan de Matt a la base mé avouez il est bo goss Bill kan meme non ?? x^)<br>
+              J'ai eu l'inspi cette nuit, c trop romantique vs allez voir...
+            </p>
+            <div style="background:#fff0fb; padding:10px; border:1px solid #ff00ff; margin:10px; font-style:italic; font-family:Times New Roman;">
+                "Chapitre 1 : La rencontre<br><br>
+                Tu marchais sous la pluie à Berlin, tes larmes coulaient sur tes joues...<br>
+                Soudain tu cognes quelqu'un.<br>
+                - Oh entschuldigung mademoiselle ! dit une voix douce.<br>
+                Tu lèves les yeux et tu vois... BILL ! Ses yeux maquillés de noir te fixaient intensément.<br>
+                - T/P ? C'est toi ? je t'attendais..."
+            </div>
+            <p><a href="fanfic.html">[LIRE LA SUITE...]</a></p>
+            <p>Lachez vos coms si vous voulez la suite !!!! ;)</p>
+          </div>
+          <div class="post-tags">#fanfic #bill #tokiohotel #love #yn</div>
+
+          <div class="comments">
+            <div class="comment">
+                <div class="comment-author"><a href="index.html" style="color:#aa0066; text-decoration:none;">xXX_EmO_GiRl_XXx</a></div>
+              <div class="comment-meta">Auj. à 18:35</div>
+              <div class="comment-text">
+                MAIS T SERIEUSE LA ??? TOUCHE PAS A LUI SALE PESTE !!<br>
+                Tu connais rien a sa vie retourne écouter ton Matt Pokora de merde !!! <br>
+                Tu me dégoutes a vouloir tout me voler !!!
+              </div>
+            </div>
+            <div class="comment">
+              <div class="comment-author">Fan-2-MP-84</div>
+              <div class="comment-meta">Auj. à 18:40</div>
+              <div class="comment-text">
+                Euh... tu trahi Matt la ? :/ je croyais t'aimais pas les emos ?
+              </div>
+            </div>
+             <div class="comment">
+              <div class="comment-author" style="color:#ff3f9b;">Miss_Kawaii</div>
+              <div class="comment-meta">Auj. à 18:45</div>
+              <div class="comment-text">
+                Rhoo ca va c pr le fun !! on a le droit d'aimer 2 trucs hein ! <br>
+                Et toi Mélody calme toi c qu'une histoire mdr t trop jalouse x^)
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">Sondage du jour :D</div>
+            <div class="post-meta">Posté le 24/11/2007 à 20:00 | 8 com's</div>
+          </div>
+          <div class="post-body">
+            <p>Vs préferez koi chez un mec ?</p>
+            <p>
+              1. Les muscles (comme Matt &lt;3)<br>
+              2. Le style mystérieux (genre mèche et tout)<br>
+              3. Les yeux clairs
+            </p>
+            <p>Moi perso... je commence à hésiter entre le 1 et le 2... Oups x^)</p>
+          </div>
+           <div class="post-tags">#sondage #boys #choix</div>
+        </article>
+        
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">Cc mé shamallowwwww <3</div>
+            <div class="post-meta">Posté le 23/11/2007 à 11:45 | 15 com's</div>
+          </div>
+          <div class="post-body">
+            <p>Tro heureuse d'avwar pu allé o consser de Matt Pokora ma VIE. Je peux mourrir en paix mtn mdrrrr</p>
+            <p>Mon nvo poster qu'il a signé (g fé la queu 1h pour sa omggg :o :o :o)</p>
+            <p>Dite moa se ke vs en pensé xoxoxoxo</p>
+            <img src="postermatt.jpg" alt="poster dedicace matt">
+          </div>
+          <div class="post-tags">#concert #mattpokora #dedicace #tropbo</div>
+
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-author">loveuse43</div>
+              <div class="comment-meta">Hier à 12:00</div>
+              <div class="comment-text">tro bo tro la chansse !!!</div>
+            </div>
+            <div class="comment">
+                <div class="comment-author"><a href="xXX_EmO_GiRl_XXx.html" style="color:#aa0066; text-decoration:none;">xXX_EmO_GiRl_XXx</a></div>
+              <div class="comment-meta">Hier à 12:30</div>
+              <div class="comment-text">
+                Tro la honte Pokora pfff truk de poseur, tas aukune personnalité<br>
+                Tu veu que je signne tes barbies ??? G vu ta coupe en + la dernièr fwa t cheum
+              </div>
+            </div>
+            <div class="comment">
+              <div class="comment-author" style="color:#ff3f9b;">Miss_Kawaii</div>
+              <div class="comment-meta">Hier à 13:00</div>
+              <div class="comment-text">ftg Mélody tfasson c toi t cheum</div>
+            </div>
+             <div class="comment">
+              <div class="comment-author">sebdu19</div>
+              <div class="comment-meta">Hier à 13:05</div>
+              <div class="comment-text">casséééééé</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">~* Mon mood d'auj' *~</div>
+            <div class="post-meta">Posté le 22/11/2007 à 14:15 | 3 com's</div>
+          </div>
+          <div class="post-body">
+            <p>Voilà mon mood du jour en ascii art ! mew mew &lt;3</p>
+            <div class="ascii-art">
+        ⠀⠀⠀⢀⡴⠲⣄⠀⠀⢀⡶⠲⡄⠀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⣀⣀⣀⣾⠁⠀⠹⠿⠟⠟⠀⠀⠙⣛⣉⡻⠿⠋⣿⣷⢦⣄⠀⠀⠀⠀⠀⠀
+        ⠭⠭⣽⠇⠀⠶⠀⢴⣦⠀⠶⠆⠸⠯⠭⠄⠀⠀⠀⠀⠀⠙⢧⡀⠀⢀⣤⣤
+        ⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⣤⣾⣻⡟
+        ⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧⠽⠋⠀
+        ⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀⠀⠀⠀
+        ⠀⠀⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀⠀⠀⠀
+        ⠀⠀⠈⠳⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠟⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠉⠿⠟⠛⠛⠻⠾⠛⠛⠛⠛⠻⠟⠛⠛⠻⠾⠃⠀⠀⠀⠀⠀⠀
+        mew mew
+            </div>
+          </div>
+          <div class="post-tags">#ascii #art #mood #kawaii</div>
+        </article>
+
+        <article class="post">
+          <div class="post-header">
+            <div class="post-title">Envole-moi... vers l'infini &lt;3</div>
+            <div class="post-meta">Posté le 21/11/2007 à 16:20 | 12 com's</div>
+          </div>
+          <div class="post-body">
+            <p>Ojd g ékouté le nvo son de M Pokora ma resta</p>
+            <p>enkore un bete de son frencheman jms déssu <3</p>
+            <p>tro heureuse kil est fai sette musik x^)</p>
+            <p>lisez ces paroles srx sa resonne en mwa</p>
+            
+            <div style="background:#fff; border:1px dotted #ff0099; padding:10px; font-style:italic;">
+                "Envole-moi, envole-moi, envole-moi<br>
+                Loin de cette fatalité qui colle à ma peau<br>
+                Envole-moi, envole-moi<br>
+                Remplis ma tête d'autres horizons, d'autres mots, envole-moi"
+            </div>
+          </div>
+          <div class="post-tags">#envolemoi #lyrics #mood #sadsong</div>
+
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-author">Guest-13</div>
+              <div class="comment-meta">21/11/2007</div>
+              <div class="comment-text">ta des giouts de merde</div>
+            </div>
+             <div class="comment">
+              <div class="comment-author" style="color:#555;">jm58</div>
+              <div class="comment-meta">21/11/2007</div>
+              <div class="comment-text">
+                je préfère la version de Jean-Jacques Goldmann.<br>
+                bises du 58, Jean-Marie.....<br>
+                A méditer......
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <aside id="right-col">
+        
+        <div class="box">
+          <h3>J'aime ♥</h3>
+          <ul>
+            <li>les boys qui chantent</li>
+            <li>les lyrics romantiques</li>
+            <li>les bracelets fluo</li>
+            <li>chanter en cachette...</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Je n'aime pas </3</h3>
+          <ul>
+            <li>les poseurs!!</li>
+            <li>les gens qui jugent</li>
+            <li>ceux qui critiquent MP!</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Mes blogs préf'</h3>
+          <ul>
+            <li><a href="xXX_EmO_GiRl_XXx.html">xXX_EmO_GiRl_XXx</a></li>
+            <li><a href="#">JB-fic-4ever</a></li>
+            <li><a href="#">Pink-Star-Diary</a></li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer>
+      Skyblog de xX_Miss_Kawaii_Xx | glitter, boys &amp; secrets ♥ | © 2007
+    </footer>
+  </div>
+</body>
+</html>
